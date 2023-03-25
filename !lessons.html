@@ -1,0 +1,145 @@
+<!-- Travel -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+
+    <!-- Webpage Icons -->
+    <link rel="icon" type="image/x-icon" href="zk-favicon.ico"/>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89012104-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-89012104-2');
+    </script>
+
+
+</head>
+
+<body class="grid">
+    <!-- Header --> 
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h3 class="medium content-web">Poker/Texas Hold'em</h3>
+                <nav class="nav">
+                    <h5 class="option"><a href="index.html">What Is Poker</a></h5>
+                    <h5 class="option selected">Lessons</h5>
+
+                </nav>
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Lessons<br>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12 main">
+        <!-- Intro -->
+        <div class="section">
+            <h2 class="city city-athens">Introduction</h2>
+            <h5 class="option"><a href="!rulesOfPoker.html">#1 The Rules of Poker</a></h5><br><br>
+            <h5 class="option"><a href="!CT&PT.html">#2 Common Terms, EV, & Player Types</a></h5><br><br>
+            <h5 class="option"><a href="!HS.html">#3 Hand Strength</a></h5>
+        </div>
+
+        <!-- PreFlop -->
+        <div class="section">
+            <h2 class="city city-athens">Preflop</h2>
+            <h5 class="option"><a href="!OR.html">#1 Opening Ranges</a></h5><br><br>
+            <h5 class="option"><a href="!equities.html">#2 Pot/Fold Equity and Required Fold Equity</a></h5><br><br>
+            <h5 class="option"><a href="!Limping_&_Stealing.html">#3 Limping & Stealing Blinds</a></h5><br><br>
+            <h5 class="option"><a href="!cr.html">#4 Calling Open Raises</a></h5>
+        </div>
+
+        <!-- Betting -->
+        <div class="section">
+            <h2 class="city city-athens">Betting</span></h2>
+            <h5 class="option"><a href="!ISO-Triangle.html">#1 Limp or Not?</a></h5><br><br>
+            <h5 class="option"><a href="!3bett.html">#2 Betting Over Others</a></h5><br><br>
+            <h5 class="option"><a href="!lightCBet.html">#3 Light C-Betting</a></h5><br><br>
+            <h5 class="option"><a href="!valueCBet.html">#4 Value C-Betting</a></h5><br><br>
+            <h5 class="option"><a href="!Think&Thin.html">#5 Thick and Thin</a></h5><br><br>
+        </div>
+
+    </main>
+    
+    <footer class="c12 grid">
+        <div class="c6-left">
+        </div>  
+        
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>
