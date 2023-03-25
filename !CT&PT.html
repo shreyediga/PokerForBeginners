@@ -1,0 +1,127 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Common Terms & Player Types</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */  
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Common Terms & Player Types</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+            <p>
+                <h2 class="city city-athens">Common Terms</h2>
+            </p>
+
+            
+            <p> 
+                In poker, there are villains and heroes. The hero being the good guy would be you. The villain would be the person playing against you. Usually referred to in a 1v1 state.
+            </p>
+            <p><img src="HerovVillian.png" class="center3"></p>
+            <p>
+                Outs: These are the cards that can help you make good hands on later turns to be able to beat your opponents.
+            </p>
+            </br>
+            <p>
+                Draws: This is a hand that has a lot of outs.
+            </p>
+             <p><img src="drawsNouts.png" class="center3"></p>
+             <p>
+                This image does a great job depicting the most common draws in poker as well as the number of outs they have.
+             </p>
+            </br>
+            <p>
+                <h2 class="city city-athens">Player Types</h2>
+            </p>
+             <p><img src="playertypes.png" class="center3"></p>
+             <p>
+                Above shows the major player types in Poker. A lot of these player types are bad, and they are people we want to be able to exploit, but some are good. Normally, we want to be Tight and Aggressive. Most of the time, we don't want to be the ones who are calling since it does not put any pressure on the villain. There are times we should call, but we like to be the ones controlling the game and keeping up the pressure. 
+             </p>
+
+            
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

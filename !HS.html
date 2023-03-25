@@ -1,0 +1,132 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Hand Strength</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */  
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Hand Strength</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+            <p>
+                <h2 class="city city-athens">Hand Strength</h2>
+            </p>
+
+            
+            <p> 
+                Before we talk about hand strengths, we have to talk about implied odds.</br>
+                Implied odds - The method used to effectively measure how much it costs to keep playing the hand vs. the amount we stand to win if we make a strong hand.</br>
+                We figure out our odds of winning the round and how much of the pot we own to see if we have good implied odds to play.
+            </p>
+            <p>
+                Moving on to Hand Strength. There are three categories, Good Pair Potential, Versatility, and Nut Potential.</br></br>
+                <h3 class="city city-athens">Good Pair Potential</h3>
+                <p>This category is about making the best pairs. Although pairs are at the bottom of the list in winning hands, they are rather frequent when playing. This is because as you go up the hands, they get rarer. This is why having good pair potential matter so much when we are ranking hand strength.</p></br>
+                <h3 class="city city-athens">Versatility</h3>
+                <p>This category is about the pair that has the potential to make the most hands. These are the kinds of hands that have a lot of outs giving us a higher chance to hit our draws and win more frequently.</p></br>
+                <h3 class="city city-athens">Nut Potential</h3>
+                <p>This category is about the chance to make some crazy good hands like a Royal Flush or Straight Flush. These hands are so incredibly rare, and almost always, even with a good starting hand, you won't be able to make these hands. Even then, this is taken into account when determining hand strength on the off chance that you do get the best hand.</p></br>
+                <h3 class="city city-athens">Check for Understanding</h3>
+                <p>Click on which pair you think is the best.</p>
+                <p>1)</p>
+                <button type="button" onclick='document.getElementById("1").innerHTML="Yes, this is correct. AK of clubs have a much better GPP than the 68 pair. Although the other AK pair has the same chance to make straights and pairs, the AK clubs are the same suit so you can also make flushes."'><img src="AKs.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick="alert('Not Quite. Try again!')"><img src="A8s.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick="alert('Oh so close. Try again!')"><img src="AKo.png"></button>                
+                <p id="1"> </p><br>
+
+                <p>2)</p>
+                <button type="button" onclick="alert('Oh so close. Try again!')"><img src="A4o.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick='document.getElementById("2").innerHTML="Yes, this is correct. A7o is the best pair here since it has the best GPP. This is important because when it comes time for showdown, if both players connect to an AA pair, then A7o would win since the 7>4. These extra cards that are not actually part of the hand are called kickers and play a very improtant role."'><img src="A7o.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick="alert('Not Quite. Try again!')"><img src="96o.png"></button>                
+                <p id="2"> </p><br>
+
+                <p>3)</p>
+                <button type="button" onclick='document.getElementById("3").innerHTML="Yes, this is correct. 99 is the best hand here because of its versatility as well as its nut potential. 99 and QTo are both clearly better than the T2o. 99 is better than the QTo because of its ability to be able to make a 3 pair. Altough QTo would flop  pairs, 99 has the chance to make a triple or even a quadruple. Also starting your hand with a pair would give u a higher chance of getting a double pair."'><img src="99.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick="alert('Not Quite. Try again!')"><img src="T2o.png"></button> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <button type="button" onclick="alert('Oh so close. Try again!')"><img src="QTo.png"></button>                
+                <p id="3"> </p><br>
+            </p>
+            
+
+
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,147 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>The Equities</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Pot/Fold Equity and Required Fold Equity</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+        <p>
+            <h2 class="city city-athens">Rule of 4</h2>
+        </p>
+        <p>
+           A good way to calculate your Pot Equity is by the Rules of 4. Using the Rules of 4, you can quickly approximate what your odds are of winning a hand is.</br></br>
+           Rule of 4:</br>
+           &emsp;&emsp;&emsp;&emsp;If we have N outs and 2 cards left to see, the probablity we make our draw is 4N%</br>
+           &emsp;&emsp;&emsp;&emsp;If we have N outs, the probablity we make our draw on the next card is 2N%</br></br>
+           <button type="button" onclick='document.getElementById("3").innerHTML="You have an open-ended straight draw and a flush draw, you would have 15 outs, so the odds you would hit your draw is 60% by the river and 30% on your next turn."'><img src="rule4exp.png"></button>
+           Click on example to see the answer
+           <p id="3"> </p><br>
+           
+        </p>
+
+
+        <p>
+            <h2 class="city city-athens">Pot Equity</h2>
+        </p>
+        <p>
+            Pot Equity - Hero's share of the pot based on how often their hand will be the best by the river(It is the probability that we will win).</br></br>
+            <button type="button" onclick='document.getElementById("2").innerHTML="Before you see the flop, Hero has an 82% chance of winning, but post-flop, Villian has about a 36% chance of winning, dropping Hero to around 62%."'><img src="equityexp.png"></button>
+            Click on example for explanation
+            <p id="2"> </p><br></br>
+        </p>
+        <p>
+            Pot Odds - The ratio of the pot as it currently stands to Hero's investment to see the next card (When calling a bet to see the next card, we want to make sure it would be profitable).</br>
+            <img src="potodds.png">
+
+        </p>
+
+        <p>
+            <h2 class="city city-athens">Fold Equity</h2>
+        </p>
+        <p>
+            Fold Equity - The % of the time Hero wins the pot by getting everyone to fold. If everyone folds, you end up winning the blinds, which at the end of the day, is still a good profit if you can steal the blinds a lot.</br>
+            If we assume that each person has about an 88% chance of folding to calculate the chance that N players fold after you are (.88)^N.</br>
+            Example:</br>
+            &emsp;&emsp;&emsp;&emsp;If Hero raises from UG in hopes of everyone folding, it is (.88)^5 = 52.8%, but Hero raising from BU to get everyone to fold is (.88)^2 = 77.4%.
+        </p>
+            
+        <p>
+            <h2 class="city city-athens">Required Fold Equity</h2>
+        </p>
+        <p>
+            Required Fold Equity is used to steal the blinds or bluff a weak hand.</br>
+            Formula for RFE:</br>
+            &emsp;&emsp;&emsp;&emsp;<img src="rfe.png"></br>
+            <img src="rfeexmp.png"></br>
+            Sometimes even if our RFE is higher than our RFE, we may bet due to other factors like having a good hand or the other players aren't as skilled and don't notice you trying to steal the blinds.
+
+        </p>
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Light C-Bet</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Light C-Betting</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+        <p>
+            Light C-Bet: When the pre-flop raiser continues to show a strong hand and also to help raise the pot.
+        </p>
+    </br>
+        <p>
+            <h3 class="city city-athens">Board Texture</h3>
+        </p>
+        <p>
+            This is about how the flop comes out. If a flop has a chance of giving people amazing hands, like three cards of the same suit or T98, those are wet since there is a good chance someone can connect with them. This is bad for us. We would rather have a dry texture, that way, players would be more likely to drop, and we can light c-bet.
+        </p>
+        <p>
+            <h3 class="city city-athens">Equity</h3>
+        </p>
+        <p>
+            The more Equity we have, the more we would want to raise because we would also have better implied odds. Equity is very important and can make or break a bet.
+        </p>
+        <p>
+            <h3 class="city city-athens">Showdown Value</h3>
+        </p>
+        <p>
+            Showdown value is how strong a hand is at showdown if it isn't improved in the turn and river. After the flop, if you have no pairs or any draws, your hand would have no showdown value.
+        </p>
+        <p>
+            <h3 class="city city-athens">Multiwayness</h3>
+        </p>
+        <p>
+            This is about having the lowest amount of players going into the flop. With more players still in, this decreases your chances of winning as there is a higher chance that more players might have connected with the board.
+        </p>
+        <p>
+            <h3 class="city city-athens">Position</h3>
+        </p>
+        <p>
+            Finally, we have position which, of course, we would like to be in position as that is always a good thing.
+        </p>
+        
+        <p>
+            <h2 class="city city-athens">C-Bet Sizing</h2>
+        </p>
+        <p><img src="cbetsizing.png"></p>
+        <p>
+            This is a great way to approximate how much you should be betting when doing a light c-bet.
+        </p>
+
+       
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

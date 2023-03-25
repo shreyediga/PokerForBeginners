@@ -1,0 +1,137 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Limping or Raising?</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Limp or Not?</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+        <p>
+            <h2 class="city city-athens">ISO Triangle</h2>
+        </p>
+
+        <p><img src="iso.png"></p>
+        <p>
+            The image above is about understanding wether or not to raise after the player before you limps. The bigger the area on the triangle the more important it will be in if you raise or not.
+        </p>
+        <p>
+            <h3 class="city city-athens">Frequent Strength</h3>
+        </p>
+        <p>
+            Being the most important factor, this mainly decides if you should raise a limper. Frequent strength is more about flopping good pairs and draws than nut potential. Here we look closely at GPP and Versatility. KJs have great frequent strength since they can flop great pairs, flushes, and straights. Q7o has weak frequent strength as the only thing it can flop is a QQ.
+        </p>
+        <p>
+            <h3 class="city city-athens">Fold Equity</h3>
+        </p>
+        <p>
+            The more Fold Equity we have, the more we would want to raise. We also have higher equity when there is only one villain rather than against 3. It is much better to raise when we don't have to deal with a multi-way pot.
+        </p>
+        <p>
+            <h3 class="city city-athens">Position</h3>
+        </p>
+        <p>
+            Finally, we have position which, of course, we would like to be in position, as that is always a good thing.
+        </p>
+        <p>
+            <h2 class="city city-athens">Limping Behind</h2>
+        </p>
+        <p>
+            We have already stated that open limping is bad, but sometimes it is okay to limp behind someone. Sometimes in SB, you can call if multiple people also limped, but it is still better to stick to the 3bet or fold strategy. There are times when limping behind might be okay, like having great pot odds, implied odds, or when might want to steal post-flop.
+        </p>
+        <p><img src="limpTriangle.png"></p>
+        <p>
+            Here is a similar triangle for limping</br>
+        </p>
+        <p>
+            The thought process when deciding to limp or raise you look at the ISO Triangle. If you check off the triangle, then you can go ahead and ISO Raise, but if not, then you look at the limping triangle to see if you limp or fold.
+        </p>
+
+            
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

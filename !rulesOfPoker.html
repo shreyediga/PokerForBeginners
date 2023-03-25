@@ -1,0 +1,128 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Rules of Poker</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Rules of Poker</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+            <p>
+                The game of Poker is played with a standard card deck. In a deck, there are 54 cards split into 4 suits, and there are 13 cards in each suit. The goal is to use the cards you have been dealt and the ones in the center to make the strongest hand. Below is the list of all the hands you can make in Poker.
+            </p>
+            <p><img src="pokerHands.jpg" width = "123.6" Height = "700" class="center"></p>
+
+            
+            <p>
+                It can be played with 2-9 players, but is mostly played with 6. Each player has a stack of money. At the beginning of each round small blind and big blind have to pay a certain amount. BB and SB have to pay different amounts depending on the stake. If we say Stake 1/2, then BB has to put in $2, and SB has to put in $1 before they see their cards.</a>. 
+            </p><br>
+            <p>
+                The first round is called the Pre-Flop. Everyone can look at only their cards now. The positions are UG(Under the Gun), HJ(Hijack), CU(Cutoff), D(Dealer/Button), SB, and BB. The Pre-Flop round starts with UG and ends with BB, with everyone being offered the chance to fold, call, or raise. The Pre-Flop ends with the BB being the last person to react. If someone raises, everyone still in play gets a chance to respond to the raise, and action closes with the position that comes before the one that raises.
+            </p><br>
+            <p>
+                The next is called Post-Flop. For Post-Flop, three cards are dealt to the middle. These cards are community cards that can be seen and used by anybody. Playing the round is a little bit different compared to Pre-Flop. This time, players have the option to check as well since there is no current bet. A check means you skip your turn, but you are still playing. If there is no current bet you can fold, check, or raise. If there is a bet, you can only fold, call, or raise. Since there is a bet, you can't check anymore.
+            </p><br>
+            <p>
+                Then is the Turn. This round is identical to the Post-Flop, but there is one more card added to the community for a total of 4 cards.
+            </p><br>
+            <p>
+                The last round is the River. The River is the same as the Turn and Post-Flop, but one more card is added for five cards total. If there are still two or more people in the game after the round is over, then it goes into a showdown. At this point, everyone shows their hands, and the person with the best hand wins. Also, throughout the game, if at any point, everyone folds except for one, that player wins.
+            </p>
+            <br>
+            <p>
+                This is the same as the video that was on the home page. This video will walk you through everything that was talked about above.
+            </p><br>  
+             <p>                   
+                <video width="700" height="500" class="center2" controls>
+                    <source src="how_to_play_poker.mp4" type="video/mp4" >
+                  </video>
+            </p>
+            
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

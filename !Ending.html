@@ -1,0 +1,122 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Poker-Lesson 1</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Opening Ranges</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+        <p>
+            <h2 class="city city-athens">Positioning</h2>
+        </p>
+        <p>
+            The position you are in comparrion to the dealer is very important in how you play.
+        </p>
+        <p><img src="positioning.png" class="center3"></p>
+        <p>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;In the picture above everyone has been dealt their cards and the play starts with UG.
+            
+        </p>
+        <p>
+            Here UG has to go first and has the least information to play with. He doesn't know what his oppenents might do or even a relative idea of their hand strength.
+            If you are HJ, you get to have a relative idea of UG's hand. For example, if UG bets the table min,
+            you can assume that their cards might not be the best since they aren't taking any risks. This is why your position is very important when you are playing. Imagine you are dealer and everyone else has folded, even if your cards aren't the best you only have to beat 2 more players the SB and BB. This gives you the oppertunity to play hands that on the UG might seem like bad hands, but as D, relatively good ones.
+        </p>
+        <p>
+            <h2 class="city city-athens">Opening Ranges</h2>
+        </p>
+        <p>Here are the cards that would be considered good at their positions.</p>
+        <p><img src="openingranges.png" class="center3"></p><br>
+        <p>The cards from UG to D slowly fill up the table with every color being the next position. As you can see the UG should only be playing with a few pairs while D can play with more than half the possible combinations.(s = suited & o = off suite)</p>
+        <p> This chart isn't set in stone. A lot of the way you play has to also adapt to the way your opponents play. If they are aggressive you might have to play fewer hands, but if they are reckless you can loosen up a little bit.</p>
+
+            
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

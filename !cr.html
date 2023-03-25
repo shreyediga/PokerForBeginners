@@ -1,0 +1,148 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Calling Open Raises</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Calling Open Raises</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+        <p>If you want to call an open raise made by a specific position follow the charts below based on your position vs the Open Raise position.</p>
+        <p>
+            <h2 class="city city-athens">Calling UG's Open Raise</h2>
+        </p>
+        <p><img src="coUG.png" class="center3"></p><br>
+        
+        <p>
+            <h2 class="city city-athens">Calling UG's Open Raise</h2>
+        </p>
+        <p><img src="coJH.png" class="center3"></p><br>
+
+        <p>
+            <h2 class="city city-athens">Calling CU's Open Raise</h2>
+        </p>
+        <p><img src="coCU.png" class="center3"></p><br>
+
+        <p>
+            If you look at the charts, you notice that the number of hands played, no matter what position open raised, doesn't change much. The kind of hands is more so what changes. Calling against a UG has cards like 44 or 22. Then against CU, there is no cards below 66, but there are more cards at the top, like KTs or KQo.</br></br>
+            This happens because cards like 33 and 22 have nut potential and have a chance at beating top pair hands that the UG might open Raise with. The nut potential with lower cards doesn't work as well against positions like the CU since there is a chance they might already have weaker cards. That is why you would rather have much stronger cards.
+        </p>
+        <p>
+            <h2 class="city city-athens">Calling from SB?</h2>
+        </p>
+        <p>
+            For SB, just like never limping, 99% of the time, you don't call because you will be out of position. Since our range is capped, we are easier targets to be bullied by 3bettors(a player who raises a raise). Most of the time in SB, you either want to fold or 3bet.
+        </p>
+        <p>
+            <h2 class="city city-athens">Calling from BB</h2>
+        </p>
+        <p>
+           From the BB, calling opens is played a bit differently.
+           <p><img src="coBB.png" class="center3"></p><br>
+           
+        </p>
+        <p>
+            Since we will still be out of position if we call we only want to play good hands and much tighter ranges.</br>
+        </p>
+        <p>
+            When playing against the BU and the SB the way we call depends on how much the villian bets. 
+            <p><img src="BBvBU.png" class="center3"></p><br>
+        </p>
+        <p>
+            We end up playing quite a few hands here since the smaller the open is the better our pot odds are and the more hands we can play with.
+            As the BU bets smaller and smaller we can play with more hands since the price is cheap enough to be able to call with.
+        </p>
+
+        <p>
+            <p><img src="BBvSB.png" class="center3"></p><br>
+        </p>
+        <p>
+            In this case, BB has position over SB so that is already a plus side. Just like agasint the BU, BB can play way more hands the cheaper it is to call. 
+        </p>
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

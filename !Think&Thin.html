@@ -1,0 +1,142 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Thick v Thin</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Thick VS Thin Value Bets</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+        <p>
+           A continuation of value c-bets, there are 2 types, thick and thin.
+        </p>
+        <p>
+            <h2 class="city city-athens">Thin Value Bets</h2>
+        </p>
+        <p>
+            Thin Value - Hero's relative hand strength is weak but still good, so we can get called by people we have more than 50% equity over.</br>
+            When thin value betting in position, there are two main factors you look at, board texture and the type of player the villain is. If you know that our villain would call us with weak hands, we can go thinner since our hands would still be better. We also want a more dry board texture since this means we could go thinner, and the villain would be less happy to fold. We should also try to understand our villain's range. If it is uncapped, meaning they could have the best hands, we should probably not thin value bet. Thin value betting out of position is more complicated since we can get bullied by the villain. When out of position, there are three main things to do.</br>
+            Bet/Fold - We bet here but if villain raises we fold, which is basically a thin value bet.</br>
+            Check/Call - We check here and call a villain bet, this is used to try to catch bluffs.</br>
+            Check/Fold - We check intending to fold to a bet since we don't have the hands to bet or call.</br>
+        </p>
+        <p>
+            <h2 class="city city-athens">Thick Value Bets</h2>
+        </p>
+        <p>
+            Thick Value - Our hand is way ahead of the villain, and we don't need to worry.</br>
+            Here it is an easy value bet since we have such strong hands, we don't worry about our villain. We just go ahead and C-bet for value.
+       </p>
+        <p>
+            <h2 class="city city-athens">End of Action Bets</h2>
+        </p>
+        <p>
+            This is when the hero faces a bet where if we call, it will be the last action, and it would be a showdown.</br>
+            When in this position you ask a few questions:</br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;1) Can villain be value betting many hands that are bad? - If yes, we can come to the conclusion of calling.</br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;2) Can villain have a missed range? - If no, then we should probably fold.</br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;3) Can villain be trusted to represent good hands? - If no, then we can call to catch their bluff.</br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;4) Do you have any reads on the villain?</br>
+        </p>
+        <p>
+            If we can read the villain, it can be useful in understanding how to play against them.</br>
+            There are player reads when the hero knows something specific about the villain.</br>
+            There are player-type reads when the hero understands that the villain fits into a specific player type, and the hero can use that.</br>
+            Finally, there are population reads where the hero knows something about the general population that could be used to their advantage.</br>
+            The first one is the best kind of read, and the last is rather vague.
+        </p>
+        <p>
+
+        </p>
+        <p>
+
+        </p>
+
+            
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>

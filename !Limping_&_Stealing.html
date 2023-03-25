@@ -1,0 +1,110 @@
+<!-- About -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Limping and Stealing</title>
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        /* Back button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.back').removeClass('no-display');
+          } else {
+              $('.back').addClass('no-display');
+          }
+        });
+        
+        /* Forward button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.forward').removeClass('no-display');
+          } else {
+              $('.forward').addClass('no-display');
+          }
+        });
+        
+        /* Scroll button appears on scroll */
+        $(window).scroll(function(){
+          if ($(this).scrollTop() > 20) {
+              $('.scroll-to-top').removeClass('no-display');
+          } else {
+              $('.scroll-to-top').addClass('no-display');
+          }
+        });
+
+        /* Smooth Scrolling */
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 500, function(){
+                    window.location.hash = hash;
+                });
+            }
+          });
+        });
+    </script>
+</head>
+
+<body class="grid">
+    <!-- Header -->
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h5 class="option"><a href="!lessons.html">Go Back</a></h5>
+
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Limping and Stealing Blinds</h1>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12">
+
+        <p>
+            <h2 class="city city-athens">Limping</h2>
+        </p>
+        <p>
+            OPEN LIMPING IS BAD. NEVER OPEN LIMP.</br>
+            Limping is when you be the table min. For example, if BB has to bet $2 that is the table min, and you should never call that bet. You can call other players' raises but never call the min bet. You should either raise or fold. Calling the $2 bet is bad since it doesn't fall into any of the categories of a good player. As we talked about in player types, we want to be TAG players, and calling is the opposite of tight, and we are not being aggressive in any way when we call the min bet.
+        </p>
+        <p>
+            <h2 class="city city-athens">Stealing Blinds</h2>
+        </p>
+        <p>
+            We talked about this a little in Preflop lesson #2, but stealing blinds is very important. Use RFE and FE to make sure the bet to steal the blinds is justified. A common misconception is that the blinds don't have that much value, so it is not worth as much to try to get them. This is simply not true since even getting $3 every once in a while is still quite a bit of money. If you think you may be playing inexperienced players who are nits, stealing the blinds is a great way to make money.
+        </p>
+
+        
+    </main>
+    
+    <footer class="c12 grid">
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>
