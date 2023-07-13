@@ -1,0 +1,116 @@
+<!-- Travel -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEAD -->
+<head id="top">
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/hover-min.css">
+
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  
+</head>
+
+<body class="grid">
+    <!-- Header --> 
+    <header class="c12">
+        <!-- Nav -->
+        <div class="hero">
+            <div class="header">
+                <h3 class="medium content-web">Poker/Texas Hold'em</h3>
+                <nav class="nav">
+                    <h5 class="option"><a href="index.html">What Is Poker</a></h5>
+                    <h5 class="option"><a href="!lessons.html">Lessons</a></h5>
+                    <h5 class="option selected">Hand Evaluator</a></h5>
+
+                </nav>
+            </div>
+
+            <!-- Title -->
+            <div class="title">
+                <div>
+                    <h1 class="medium">Poker Hand Evaluator<br>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="c12 main">
+        <!-- Intro -->
+        <div class="section">
+              <form id="pokerForm">
+                <label for="player">Player cards:</label><br>
+                <input type="text" id="player" name="player"><br>
+                <label for="opponent1">Opponent 1 cards:</label><br>
+                <input type="text" id="opponent1" name="opponent1"><br>
+                <label for="opponent2">Opponent 2 cards:</label><br>
+                <input type="text" id="opponent2" name="opponent2"><br>
+                <label for="opponent3">Opponent 3 cards:</label><br>
+                <input type="text" id="opponent3" name="opponent3"><br>
+                <label for="opponent4">Opponent 4 cards:</label><br>
+                <input type="text" id="opponent4" name="opponent4"><br>
+                <label for="opponent5">Opponent 5 cards:</label><br>
+                <input type="text" id="opponent5" name="opponent5"><br>
+                <input type="submit" value="Submit">
+            </form>
+            
+            <p id="result"></p>
+
+              <script>
+$("#pokerForm").submit(function(event) {
+    event.preventDefault();
+
+    const url = "http://127.0.0.1:5000/calculate";
+    
+    const playerCards = $("#player").val().split(',');
+    const payload = {
+        "player": playerCards
+    };
+
+    // check if the input is not blank, then add to the payload
+    if ($("#opponent1").val().trim() !== "") payload["opponent1"] = $("#opponent1").val().split(',');
+    if ($("#opponent2").val().trim() !== "") payload["opponent2"] = $("#opponent2").val().split(',');
+    if ($("#opponent3").val().trim() !== "") payload["opponent3"] = $("#opponent3").val().split(',');
+    if ($("#opponent4").val().trim() !== "") payload["opponent4"] = $("#opponent4").val().split(',');
+    if ($("#opponent5").val().trim() !== "") payload["opponent5"] = $("#opponent5").val().split(',');
+
+    $.ajax({
+        url: url,
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(payload),
+        success: function(response) {
+            $("#result").html(JSON.stringify(response));
+        },
+        error: function(xhr, status, error) {
+            $("#result").html(`Request failed with status code ${xhr.status}`);
+        }
+    });
+});
+</script>
+
+    </main>
+    
+    <footer class="c12 grid">
+        <div class="c6-left">
+        </div>  
+        
+        <!-- Scroll To Top -->
+        <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
+    </footer>
+</body>
+
+</html>
