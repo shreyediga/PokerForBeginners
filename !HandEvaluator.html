@@ -48,21 +48,23 @@
         </div>
     </header>
     
-    <main class="c12 main">
-        <!-- Intro -->
-        <div class="section">
-              <form id="pokerForm">
-                <label for="player">Player cards:</label><br>
+    
+ 
+        <div class = "c6-left">
+            <form id="pokerForm">
+                <label for="player">Player cards:</label>
                 <input type="text" id="player" name="player"><br>
-                <label for="opponent1">Opponent 1 cards:</label><br>
+                <label for="flop">Flop cards:</label>
+                <input type="text" id="flop" name="flop"><br>
+                <label for="opponent1">Opponent 1 cards:</label>
                 <input type="text" id="opponent1" name="opponent1"><br>
-                <label for="opponent2">Opponent 2 cards:</label><br>
+                <label for="opponent2">Opponent 2 cards:</label>
                 <input type="text" id="opponent2" name="opponent2"><br>
-                <label for="opponent3">Opponent 3 cards:</label><br>
+                <label for="opponent3">Opponent 3 cards:</label>
                 <input type="text" id="opponent3" name="opponent3"><br>
-                <label for="opponent4">Opponent 4 cards:</label><br>
+                <label for="opponent4">Opponent 4 cards:</label>
                 <input type="text" id="opponent4" name="opponent4"><br>
-                <label for="opponent5">Opponent 5 cards:</label><br>
+                <label for="opponent5">Opponent 5 cards:</label>
                 <input type="text" id="opponent5" name="opponent5"><br>
                 <input type="submit" value="Submit">
             </form>
@@ -76,11 +78,14 @@ $("#pokerForm").submit(function(event) {
     const url = "http://127.0.0.1:5000/calculate";
     
     const playerCards = $("#player").val().split(',');
+    const flopCards = $("#flop").val().split(',');
     const payload = {
         "player": playerCards
     };
 
     // check if the input is not blank, then add to the payload
+    if($("#flop").val().trim() !== "") payload["flop"] = $("#flop").val().split(',');
+    if($("#flop").val().trim() == "") payload["flop"] = [];
     if ($("#opponent1").val().trim() !== "") payload["opponent1"] = $("#opponent1").val().split(',');
     if ($("#opponent2").val().trim() !== "") payload["opponent2"] = $("#opponent2").val().split(',');
     if ($("#opponent3").val().trim() !== "") payload["opponent3"] = $("#opponent3").val().split(',');
@@ -100,17 +105,17 @@ $("#pokerForm").submit(function(event) {
         }
     });
 });
-</script>
+                </script>
+        </div>
 
-    </main>
-    
-    <footer class="c12 grid">
-        <div class="c6-left">
-        </div>  
+        <div class="c6-right">
+            This is a poker hand evaluator. It takes into account your oppents cards, your cards, and the flop as well. You enter the hands in the corresponding areas on the left. When entering the hands the format is the card number followed by the first letter of the suit. For example the 8 of spades would be 8s and the 4 of clubs would be 4c. Ace = A, Kings = K, Queen = Q, Jack = J, and Ten = T. EX: King of Hearts = Kh. Also seperate the hands with a comma so if you had 9 of diamons and 3 of hearts your hand would be "9d,3h" Once you hit submit it will return a percentage and that is the chance you have of winning that hand using a Monte Carlo simulation. Below is also a list of all the different hand combinations.
+        </div> <br>
+        p><img src="pokerHands.jpg" width = "612" Height = "900"></p> 
         
         <!-- Scroll To Top -->
         <a href="#top" aria-label="scroll to top" class="content-web no-display scroll-to-top"></a>
-    </footer>
+
 </body>
 
 </html>
