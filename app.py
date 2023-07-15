@@ -157,7 +157,7 @@ def simulate_game_with_known_cards(hole_cards, opponent_hands, community_cards,
 
 # Initialize your Flask application
 app = Flask(__name__)
-CORS(app)  # Enable Cross-Origin Resource Sharing for this application
+CORS(app, resources={r"/calculate": {"origins": "https://yourusername.github.io"}})
 
 # @app.route('/')
 # def home():
