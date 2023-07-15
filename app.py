@@ -157,7 +157,7 @@ def simulate_game_with_known_cards(hole_cards, opponent_hands, community_cards,
 
 # Initialize your Flask application
 app = Flask(__name__)
-CORS(app, resources={r"/calculate": {"origins": "https://yourusername.github.io"}})
+CORS(app, resources={r"/calculate": {"origins": "https://shreyediga.github.io"}})
 
 # @app.route('/')
 # def home():
